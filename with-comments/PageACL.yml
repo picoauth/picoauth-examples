@@ -1,0 +1,20 @@
+# List of access rules
+access:
+  /secret:
+    groups: [ default ]     # Everyone authenticated is in this group
+  /secret/cvut:
+    groups: [ cvut ]        # All users that used the CVUT provider
+  /secret/test:
+    users: [ test ]         # List of user identifiers
+  /nonrecursive:
+    recursive: false        # Rules apply resursively, this disables it
+    users: [ user1 ]
+  /secret/page:             # Any combination of groups and users
+    groups: [ test, group2 ]
+    users: [ user1, user2 ]
+
+  # The following rule would apply on all pages
+  # that are not covered by the rules above
+  /:
+    groups: [ default ]
+

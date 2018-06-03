@@ -1,0 +1,59 @@
+callbackPage: SSOAuth
+providers:
+  CVUT:
+    provider: \Tp3\OAuth2\Client\Provider\CVUT
+    options:
+      clientId: '...'
+      clientSecret: '...'
+    default:
+      groups: [cvut]
+      attributes:
+        img: /assets/cvut-logo.gif
+  Dropbox:
+    provider: \Stevenmaguire\OAuth2\Client\Provider\Dropbox
+    options:
+      clientId: '...'
+      clientSecret: '...'
+    attributeMap:
+      userId: account_id
+      displayName: name.display_name
+      img: profile_photo_url
+  Gitlab:
+    provider: \Omines\OAuth2\Client\Provider\Gitlab
+    options:
+      clientId: '...'
+      clientSecret: '...'
+    attributeMap:
+      userId: username
+      displayName: name
+      img: avatar_url
+  Facebook:
+    provider: \League\OAuth2\Client\Provider\Facebook
+    options:
+      clientId: '...'
+      clientSecret: '...'
+      graphApiVersion: v2.10
+    attributeMap:
+      userId: id
+      displayName: name
+      img: pictureurl
+  Google:
+    provider: \League\OAuth2\Client\Provider\Google
+    options:
+      clientId: '...'
+      clientSecret: '...'
+    attributeMap:
+      userId: id
+      displayName: name
+      img: avatar
+  Gitlab2: #Gitlab again, but without a provider class
+    options:
+      clientId: '...'
+      clientSecret: '...'
+      urlAuthorize: https://gitlab.com/oauth/authorize
+      urlAccessToken: https://gitlab.com/oauth/token
+      urlResourceOwnerDetails: https://gitlab.com/api/v4/user
+    attributeMap:
+      userId: username
+      displayName: name
+      img: avatar_url

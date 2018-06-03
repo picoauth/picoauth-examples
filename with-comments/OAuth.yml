@@ -1,0 +1,24 @@
+callbackPage: 'oauth_callback'
+providers:
+  CVUT:
+    # Using a provider class
+    provider: '\Tp3\OAuth2\Client\Provider\CVUT'
+    options:
+      clientId: '922c64d9-b359-4d42'
+      clientSecret: 'f71e20bb-a75a-45b7'
+    default:
+      groups: [ cvut ]
+      attributes:
+        img: '/default.png'
+  Gitlab:
+    # No provider specified, defaults to the GenericProvider
+    options:
+      clientId: '39bd1bbf-fd92-419b'
+      clientSecret: 'edd2daa5-d6fb-49cc'
+      urlAuthorize: 'https://gitlab.com/oauth/authorize'
+      urlAccessToken: 'https://gitlab.com/oauth/token'
+      urlResourceOwnerDetails: 'https://gitlab.com/api/v4/user'
+    attributeMap:
+      userId: 'username'
+      displayName: 'name'
+      img: 'avatar_url'

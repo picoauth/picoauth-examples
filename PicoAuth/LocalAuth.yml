@@ -1,0 +1,38 @@
+registration:
+  enabled: true
+  nameLenMin: 3
+  nameLenMax: 16
+  maxUsers: 10000
+passwordReset:
+  enabled: true
+  emailMessage: |
+    Hello %username%,
+    Visit the link to reset your password to %site_title%.
+
+    The password reset URL:
+    %url%
+
+    If you did not request a password reset, please ignore this email. This password reset is only valid for the next 30 minutes.
+
+    Regards,
+    %site_title%
+  emailSubject: '%site_title% - Password Reset'
+  tokenIdLen: 9
+  tokenLen: 16
+  tokenValidity: 1800
+  resetTimeout: 1800
+accountEdit:
+  enabled: true
+encoder: bcrypt
+users:
+  user1:
+    pwhash: $2y$10$qi5Xz.39w3pvPw2k4BvanudOoelF/Li6necs1DoQUKFRLecvYpdKG
+    groups: [employee, manager]
+  user2:
+    pwhash: $2y$10$KMWh.9YkxhhNqoMRBmNU5OnlerVSIJbmIckenlW.Llsa8a9G8wd32
+    groups: [employee]
+  user3:
+    pwhash: $2y$10$KGoaCDdJwN9GkeyxtsJs1O95KpxGMCgCc09b6IHMORJ9xyN5AnGl2
+    pwreset: true
+login:
+  passwordRehash: false

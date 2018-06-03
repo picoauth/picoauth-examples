@@ -1,0 +1,22 @@
+# A list of actions to be rete limited (doesn't include all available)
+actions:
+  login:
+    ip:
+      count: 50
+      counterTimeout: 43200   # Counter expiration after 12 hours
+      blockDuration: 900      # Maximum speed 50 attempts / 15 minutes
+      # A custom message to be shown if the limit is reached
+      errorMsg: "Amount of failed attempts exceeded, \
+                 wait %min% minutes."
+      netmask_IPv4: 32  # Netmask 255.255.255.255
+      netmask_IPv6: 48  # Netmask ffff:ffff:ffff::
+    account:
+      count: 10
+      counterTimeout: 43200
+      blockDuration: 900
+  registration:
+    ip:
+      count: 10
+      blockDuration: 86400
+      errorMsg: "Amount of maximum submissions exceeded, \
+                 wait %min% minutes."

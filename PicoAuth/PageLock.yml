@@ -1,0 +1,24 @@
+encoder: bcrypt
+
+locks:
+  secret:
+    key: "test"
+    encoder: "plain"
+  lock1:
+    key: "test"
+    encoder: "plain"
+  lock2:
+    key: "1234"
+    encoder: plain
+    file: locked_screen.md
+
+urls:
+  /secret/locked:
+    lock: secret
+  /locked_A:
+    lock: lock1
+  /locked_B:
+    lock: lock1
+  /locked_C:
+    lock: lock2
+    recursive: false

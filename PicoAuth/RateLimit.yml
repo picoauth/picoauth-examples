@@ -1,0 +1,37 @@
+actions:
+  login:
+    ip:
+      count: 10
+      counterTimeout: 43200
+      blockDuration: 900
+      errorMsg: 'Amount of failed attempts exceeded, wait %min% minutes.'
+      netmask_IPv4: 24
+    account:
+      count: 5
+      counterTimeout: 43200
+      blockDuration: 900
+      errorMsg: 'Amount of failed attempts exceeded, wait %min% minutes.'
+  passwordReset:
+    email:
+      count: 100
+      counterTimeout: 86400
+      blockDuration: 86400
+      errorMsg: 'Maximum of %cnt% reset emails were sent, check your inbox.'
+    ip:
+      count: 12
+      counterTimeout: 43200
+      blockDuration: 43200
+      errorMsg: 'Amount of maximum submissions exceeded, wait %min% minutes.'
+      netmask_IPv4: 24
+  registration:
+    ip:
+      count: 10
+      counterTimeout: 86400
+      blockDuration: 86400
+      errorMsg: 'Amount of maximum submissions exceeded, wait %min% minutes.'
+      netmask_IPv4: 24
+  pageLock:
+    ip:
+      count: 100
+      counterTimeout: 3600
+      blockDuration: 3600

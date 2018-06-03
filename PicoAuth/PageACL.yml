@@ -1,0 +1,12 @@
+access:
+  /secret:
+    groups: [default]
+  /secret/cvut:
+    groups: [cvut]
+  /secret/test:
+    users: [test]
+  /secret/nonrec:
+    users: ['2645996291']
+    recursive: false
+  /:
+    users: ['113869091']

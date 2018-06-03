@@ -1,0 +1,10 @@
+PicoAuth:
+  authModules: [ LocalAuth, OAuth, PageACL, PageLock ]
+  afterLogin: 'index'      # Redirection after login
+  afterLogout: 'index'     # Redirection after logout
+  alterPageArray: false    # Removes unaccessible pages from menus
+  sessionInterval: 900     # Session regeneration every 15 minutes
+  sessionIdle: 3600        # Maximum 1 hour of inactivity
+  sessionTimeout: 7200     # Absolute maximum 2 hours
+  rateLimit: true          # Option to control rate limiting
+  debug: false             # Displays details on the error page

@@ -1,0 +1,10 @@
+pwhash: $2y$10$Jd7yvj2Y3hQrV7Q6ZqrSTuOtdwd5nmTeInikhku.WaiIBw1QexIj2
+groups:
+  - admin
+  - g1
+  - g2
+attributes:
+  img: '/assets/cat.jpg'
+encoder: bcrypt
+displayName: 'The Test User'
+

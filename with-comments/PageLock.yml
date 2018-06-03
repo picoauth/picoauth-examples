@@ -1,0 +1,19 @@
+# The default encoder to be used if not specified
+encoder: 'bcrypt'
+
+# A list of locks and their keys
+locks:
+  secret:
+    key: '$2y$10$xwxnbUdgafIN33t7oHQGJ...'
+  lock2:
+    key: 'weakKey'
+    encoder: 'plain'            # Can be used, but is not recommended
+    file: 'locked_screen.md'    # A custom page to show before unlock
+
+# An association of the locks to pages, in the same way as in PageACL
+urls:
+  /secret/locked:
+    lock: 'secret'
+  /locked_A:
+    lock: 'lock2'
+    recursive: false
